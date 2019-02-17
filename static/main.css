@@ -1,0 +1,59 @@
+body {
+  background-color: #111111;
+  margin: 20px auto;
+  width: 80%;
+}
+
+h1 {
+  font-family: Lato;
+  letter-spacing: 3px;
+  margin-top: 80px;
+  text-align: center;
+  color: #FFCCAA;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+#input {
+  padding-top: 30px;
+  text-align: center;
+}
+
+#output {
+  padding-top: 50px;
+}
+
+#url {
+  width: 70%;
+  font-size: 2em;
+  background-color: #333333;
+  color: #FFCCAA;
+  border: 2px solid #003355;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+.button {
+  font-size: 2em;
+  background-color: #333333;
+  color: #FFCCAA;
+  border: 2px solid #003355;
+  border-radius: 4px;
+  transition: border 0.5s;
+}
+
+.button:hover {
+  border: 2px solid #5588AA;
+}
+
+#tracks {
+  width: 70%;
+  font-size: 1.5em;
+  background-color: #333333;
+  color: #FFCCAA;
+  border: 2px solid #003355;
+  border-radius: 4px;
+  resize: none;
+  pointer-events: none;
+  padding: 5px 8px;
+}
