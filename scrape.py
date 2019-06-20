@@ -1,14 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
+import html
 
 def format(url):
     try:
-        html = requests.get(url).text
+        source = requests.get(url).text
     except:
         return "URL Error"
 
     try:
-        soup = BeautifulSoup(html, "html.parser")
+        soup = BeautifulSoup(source, "html.parser")
     except:
         return "Parse Error"
 
@@ -28,7 +29,7 @@ def format(url):
     for line in tracks.splitlines():
         line = line.split('.')
         numlist.append(line[0])
-        namelist.append(line[1][1:])
+        namelist.append(html.unescape(html.unescape(line[1][1:])))
 
     for time in times:
         time = str(time[0])
