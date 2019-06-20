@@ -7,19 +7,21 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='main.css') }}">
   </head>
   <body>
-    <h1>Bandcamp to RYM</h1>
+    <header>
+        <h1>Bandcamp to RYM</h1>
+    </header>
 
     <form method="POST">
       <div id="input">
         <input id="url" type="text" name="url">
-        <input class="button" id="submit" type="submit">
-      <div>
+        <input class="button" id="submit" type="submit" value="Submit">
+      </div>
 
       <div id="output">
         <textarea id="tracks" name="tracks" rows="20" cols="80">{{ output }}</textarea>
-        <br><br>
+        <br>
         <button class="button" id="copy" type="Button">Copy</button>
-      <div>
+      </div>
     </form>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
