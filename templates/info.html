@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bandcamp to RYM</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    <header>
+        <h1>Bandcamp to RYM</h1>
+    </header>
+
+    <form action="/">
+        <div id="infodiv">
+            <div id="message">
+                {{ message[0][0] }}
+                {% for step in range(1, message|length) %}
+                    <p>
+                        {% for span in message[step] %}
+                            {% if span[0] == '*' %}
+                                <span class="keyword">{{ span[1:] }}</span>
+                            {% elif span[0] == '@' %}
+                                <a href="https://zerda.space/outbound/rym.html" class="contact">{{ span[1:] }}</a>
+                            {% else %}
+                                <span>{{ span }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+            </div>
+            <br>
+            <button id="okay" class="button">Okay</button>
+        </div>
+    </form>
+  </body>
+</html>

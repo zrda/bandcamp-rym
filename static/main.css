@@ -2,6 +2,7 @@ body {
   background-color: #000;
   margin: auto;
   width: 100vw;
+  font-family: Lato;
 }
 
 header {
@@ -11,7 +12,6 @@ header {
 
 h1 {
   font-size: 8vw;
-  font-family: Lato;
   letter-spacing: 3px;
   margin-top: 0;
   margin-bottom: 5vh;
@@ -23,21 +23,12 @@ h1 {
   /* text-shadow: 0 0 1px #000;  */
 }
 
-#input {
+#input, #output {
   width: 70vw;
   padding-bottom: 5vh;
   margin-left: 15vw;
   margin-right: 15vw;
   /* background-color: #555; */
-  text-align: center;
-}
-
-#output {
-  width: 70vw;
-  padding-bottom: 5vh;
-  margin-left: 15vw;
-  margin-right: 15vw;
-  /* background-color: #777; */
   text-align: center;
 }
 
@@ -52,13 +43,16 @@ h1 {
   padding-left: 5px;
 }
 
-.button {
-  font-size: 5vw;
+.button, #tracks {
   background-color: #222;
   color: #DCA;
   box-shadow: 0 0 5px rgba(64, 64, 64, 0.4);
   border: 2px solid #035;
   border-radius: 4px;
+}
+
+.button {
+  font-size: 5vw;
   transition: border 0.5s;
   margin-top: 2vh;
 }
@@ -71,21 +65,84 @@ h1 {
   width: 65vw;
   height: 50vh;
   font-size: 3.5vw;
-  background-color: #222;
-  color: #DCA;
-  box-shadow: 0 0 5px rgba(64, 64, 64, 0.4);
-  border: 2px solid #035;
-  border-radius: 4px;
   resize: none;
   padding: 5px 8px;
-  white-space: nowrap;  
+  white-space: pre;
   overflow-wrap: normal;
   overflow-x: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-#tracks::-webkit-scrollbar { width: 0 !important }
+#info {
+  font-family: 'Oleo Script Swash Caps';
+  text-align: center;
+  font-size: 3.5vw;
+  width: 5.5vw;
+  height: 5.5vw;
+  background-color: #DCA;
+  color: #000;
+  border: 2px solid #000;
+  outline: none;
+  transition: box-shadow 0.5s;
+  border-radius: 50%;
+  position: absolute;
+  top: 1vh;
+  right: 2vw;
+}
+
+#info:hover {
+  box-shadow: 0 0 10px 5px #DCA;
+}
+
+#infodiv {
+  width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  text-align: center;
+}
+
+#message {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  width: 65vw;
+  height: 65vh;
+  font-size: 3.5vw;
+  resize: none;
+  padding: 5px 8px;
+  background-color: #000;
+  color: #DCA;
+  box-shadow: 0 0 5px rgba(64, 64, 64, 0.4);
+  border: 2px solid #035;
+  border-radius: 4px;
+  margin: 0 auto;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#okay {
+  text-align: center;
+}
+
+.keyword {
+  text-shadow: 0 0 2px #DCA;
+  color: #F82;
+}
+
+.contact {
+  text-decoration: none;
+  text-shadow: 0 0 5px #206;
+  color: #41B;
+  transition: color 0.5s;
+}
+
+.contact:hover {
+  font-weight: bold;
+  color: #38F;
+}
+
+#tracks::-webkit-scrollbar, #message::-webkit-scrollbar { width: 0 !important }
 
 @media (min-width: 600px) {
   h1 {
@@ -112,9 +169,15 @@ h1 {
     font-size: 1.5em;
   }
 
-  #tracks {
+  #tracks, #message {
     width: 68vw;
     font-size: 1.5em;
+  }
+
+  #info {
+    font-size: 1.8em;
+    width: 42px;
+    height: 42px;
   }
 }
 
@@ -124,12 +187,11 @@ h1 {
     flex-basis: 690px;
   }
 
-  .button {
+  .button, #tracks {
     font-size: 2em;
   }
 
-  #tracks {
-    font-size: 1.5em;
+  #tracks, #message {
     width: 800px;
   }
 }
